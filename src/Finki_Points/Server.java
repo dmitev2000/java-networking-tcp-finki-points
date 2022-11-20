@@ -128,6 +128,8 @@ class ServerWorker extends Thread{
                 if(received != null) {
                     Server.data.add(received);
                     System.out.println("New entry added...");
+                    objectOutputStream.writeUTF("New entry added successfully.");
+                    objectOutputStream.flush();
                     System.out.println(received);
                 } else {
                     this.s.close();

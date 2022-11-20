@@ -70,7 +70,9 @@ class TeacherWorker extends Thread {
                 Packet packet = new Packet(Integer.parseInt(arr[0]), Integer.parseInt(arr[1]), Integer.parseInt(arr[2]), Double.parseDouble(arr[3]));
                 //System.out.println(packet.courseId + " " + packet.index + " " + packet.acitvityId + " "  + packet.points);
                 objectOutputStream.writeObject(packet);
+                objectOutputStream.flush();
                 //this.dataOutputStream.writeUTF(input);
+                System.out.println(objectInputStream.readUTF());
             }
         }catch (Exception e){
             e.printStackTrace();
